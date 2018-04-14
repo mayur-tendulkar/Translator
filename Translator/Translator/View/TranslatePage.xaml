@@ -8,6 +8,7 @@
             <Entry x:Name="OriginalText" Placeholder="Text to translate"/>
             <Button x:Name="TranslateButton" Text="Translate" BackgroundColor="Yellow" TextColor="Red" FontSize="Medium" Clicked="TranslateButtonClicked"/>
             <Label x:Name="TranslatedText" FontSize="Medium"/>
+            <Button x:Name="LogOffButton" Text="Log out" BackgroundColor="Yellow" TextColor="Red" FontSize="Medium" Clicked="LogOffButtonClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

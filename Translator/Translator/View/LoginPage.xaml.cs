@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,8 @@ namespace Translator.View
                 return;
             App.Current.Properties["username"] = UsernameEntry.Text;
             await App.Current.SavePropertiesAsync();
+            Analytics.TrackEvent("User Registration",
+                                new Dictionary<string, string> { { "Username", UsernameEntry.Text } });
             await Navigation.PushAsync(new HomePage());
         }
     }

@@ -9,7 +9,7 @@ namespace Translator.Helper
 {
     static class TranslateService
     {
-        private const string SecretKey = "1070e08be5334281a2532c0bb9a7f4e7";
+        private const string SecretKey = "{insert-your-key-here}";
         private static string AccessToken = string.Empty;
         public static async Task<string> TranslateText(string textToTranslate, string languageCode)
         {
