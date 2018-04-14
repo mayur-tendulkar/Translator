@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Translator.View.HistoryPage" NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False" Title="History" Padding="10">
+    <ListView x:Name="HistoryListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell
+                    Detail="{Binding TranslatedText}"
+                    DetailColor="Brown"
+                    Text="{Binding OriginalText}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

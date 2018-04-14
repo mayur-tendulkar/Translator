@@ -8,7 +8,20 @@
     <PackageReference Include="Microsoft.AppCenter" Version="1.5.0" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.5.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.5.0" />
-    <PackageReference Include="PCLStorage.Standard" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\HistoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\TranslatePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Translator.View.LoginPage" Title="Register">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"  VerticalOptions="Center" Spacing="10" Padding="10">
+            <Label Text="Please register to use these services."/>
+            <Entry x:Name="UsernameEntry" Placeholder="Enter your name here"/>
+            <Button x:Name="RegisterButton" Text="Register" BackgroundColor="Yellow" TextColor="Red" FontSize="Medium" Clicked="RegisterButtonClicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

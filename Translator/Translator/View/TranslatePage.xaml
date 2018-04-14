@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Translator.View.TranslatePage" NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False" Title="Translate">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Spacing="10" Padding="10">
+            <Label x:Name="WelcomeText" FontSize="Medium"/>
+            <Entry x:Name="OriginalText" Placeholder="Text to translate"/>
+            <Button x:Name="TranslateButton" Text="Translate" BackgroundColor="Yellow" TextColor="Red" FontSize="Medium" Clicked="TranslateButtonClicked"/>
+            <Label x:Name="TranslatedText" FontSize="Medium"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
