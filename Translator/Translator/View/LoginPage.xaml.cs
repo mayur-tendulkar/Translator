@@ -1,5 +1,6 @@
 ﻿using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace Translator.View
             await App.Current.SavePropertiesAsync();
             Analytics.TrackEvent("User Registration",
                                 new Dictionary<string, string> { { "Username", UsernameEntry.Text } });
+            Crashes.GenerateTestCrash();
             await Navigation.PushAsync(new HomePage());
         }
     }

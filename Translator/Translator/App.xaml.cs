@@ -25,11 +25,17 @@ namespace Translator
 		protected override async void OnStart ()
 		{
             TranslateHistory = await HistoryService.ReadHistoryAsync();
-            AppCenter.Start("{platform-specific-code}",
+            AppCenter.Start("android=38e0c132-122e-4b6d-95e6-91f4faf94a6b;" +
+                               "uwp=0f9ed7a0-cdd2-4cc1-b9a9-ebbcd372050d;" +
+                               "ios=11e3ed1c-a42a-4f36-b7d7-fdd9e4dde8f2",
                 typeof(Analytics), typeof(Crashes));
+            await Crashes.SetEnabledAsync(true);
+            
         }
 
-		protected override void OnSleep ()
+       
+
+        protected override void OnSleep ()
 		{
 			// Handle when your app sleeps
 		}

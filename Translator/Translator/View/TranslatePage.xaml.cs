@@ -1,4 +1,5 @@
 ﻿using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,11 +25,20 @@ namespace Translator.View
 
         private async void TranslateButtonClicked(object sender, EventArgs e)
         {
-            TranslatedText.Text = await TranslateService.TranslateText(OriginalText.Text, "hi");
-            App.TranslateHistory.Add(new TranslateHistory() { OriginalText = OriginalText.Text, TranslatedText = TranslatedText.Text });
-            HistoryService.SaveHistoryAsync(App.TranslateHistory);
-            Analytics.TrackEvent("Translation Service",
-                               new Dictionary<string, string> { { username, OriginalText.Text } });
+            try
+            {
+                TranslatedText.Text = await TranslateService.TranslateText(OriginalText.Text, "hi");
+                App.TranslateHistory.Add(new TranslateHistory() { OriginalText = OriginalText.Text, TranslatedText = TranslatedText.Text });
+                HistoryService.SaveHistoryAsync(App.TranslateHistory);
+                Analytics.TrackEvent("Translation Service",
+                                   new Dictionary<string, string> { { username, OriginalText.Text } });
+            }
+            catch (Exception ex)
+            {
+                Crashes.TrackError(ex, new Dictionary<string, string> { { username, ex.Message } });
+                await DisplayAlert("Error!", ex.Message, "Cancel");
+            }
+            
 
         }
 
