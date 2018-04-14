@@ -25,9 +25,9 @@ namespace Translator
 		protected override async void OnStart ()
 		{
             TranslateHistory = await HistoryService.ReadHistoryAsync();
-            AppCenter.Start("android=38e0c132-122e-4b6d-95e6-91f4faf94a6b;" +
-                               "uwp=0f9ed7a0-cdd2-4cc1-b9a9-ebbcd372050d;" +
-                               "ios=11e3ed1c-a42a-4f36-b7d7-fdd9e4dde8f2",
+            AppCenter.Start("android=117db4ea-2d5e-4934-8e3a-0eb80da6ceaf;" +
+                               "uwp=2fcc3ede-d9b5-409f-afb5-93c3294b00b7;" +
+                               "ios=da424c94-d41d-40c0-bb35-354c09cb2c28",
                 typeof(Analytics), typeof(Crashes));
             await Crashes.SetEnabledAsync(true);
             
