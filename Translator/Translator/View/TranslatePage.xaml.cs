@@ -2,9 +2,6 @@
 using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Translator.Helper;
 using Translator.Model;
 using Xamarin.Forms;
@@ -12,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Translator.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TranslatePage : ContentPage
 	{
         string username;
@@ -27,7 +24,7 @@ namespace Translator.View
         {
             try
             {
-                TranslatedText.Text = await TranslateService.TranslateText(OriginalText.Text, "hi");
+                TranslatedText.Text = await TranslateService.TranslateText(OriginalText.Text, "fr");
                 App.TranslateHistory.Add(new TranslateHistory() { OriginalText = OriginalText.Text, TranslatedText = TranslatedText.Text });
                 HistoryService.SaveHistoryAsync(App.TranslateHistory);
                 Analytics.TrackEvent("Translation Service",
